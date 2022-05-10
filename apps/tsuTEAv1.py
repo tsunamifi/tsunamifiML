@@ -151,5 +151,5 @@ with st.form(key='vars'):
         number_input = st.number_input(label= 'How many tweets should we source?')
         submit_button = st.form_submit_button(label='Run')
         
-        if submit_button:
+if submit_button:
             run()

@@ -95,18 +95,23 @@ def WPA(): #wanna play again?
 """# *OK, we can play now!*"""
 
 #@title Choose which madlib to play!
-madlib_choice = "Lost my business" #@param ["The lonely companion", "Lost my business"]
 # code to play
-
+with st.form(key='vars'):
+        submit_button = st.form_submit_button(label='Run')
+        madlib_choice = st.selectbox('Madlibs',('The lonely companion', 'Lost my business'))
 ## call madlib function
+def run():
+  if madlib_choice == 'The lonely companion':
+   madlib1()
+  else:
+   madlib2()
+  output.
+  ## just a separator so its easier on your eyes
+  print('------------------------------------------------------------')
 
-if madlib_choice == 'The lonely companion':
- madlib1()
-else:
- madlib2()
-output.
-## just a separator so its easier on your eyes
-print('------------------------------------------------------------')
+  ## call play again function
+  WPA()
 
-## call play again function
-WPA()
+        
+if submit_button:
+            run()

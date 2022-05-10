@@ -43,10 +43,14 @@ from textblob import TextBlob
 ### display is so we can display a dataframe from pandas or something else.
 from IPython.display import display
 
-st.set_page_config(layout="wide")
-st.title("Tsunamifi's Twitter Sentiment Analysis Bot")
-st.write("This WebAPP will allow you to plug in a topic from twitter and determine if their tweets are Positive, Negative or Neutral.")
-
+# defining 'app'
+def app():
+    
+    ## streamlit layout
+    st.set_page_config(layout="wide")
+    st.title("Tsunamifi's Twitter Sentiment Analysis Bot")
+    st.write("This WebAPP will allow you to plug in a topic from twitter and determine if their tweets are Positive, Negative or Neutral.")
+    
 # defining twitter auth setup here!
 def auth():
 
@@ -118,31 +122,34 @@ st.write("You're welcome to use both a user and topic but both at the same time 
 
 # Take off...
 
+        
+def run():
+    
+  tweets = fetch_tweets(query = text_input, count = number_input)
+
+  ## sort and grab percentages between each type
+  ## of tweet with pandas..
+  df = pd.DataFrame(tweets, columns= ['tweets', 'clean_tweets', 'sentiment'])
+
+
+  ### dropping duplicate tweets too..
+  df = df.drop_duplicates(subset='clean_tweets')
+  df.to_csv('tweetbank.csv', index= False)
+
+  ptweets = df[df['sentiment'] == 'positive']
+  print("Percentage of positive tweets from: " + text_input + " {} %".format(100*len(ptweets)/len(tweets)))
+  
+  ntweets = df[df['sentiment'] == 'negative']
+  print("Percentage of negative tweets from: " + text_input + " {} %".format(100*len(ntweets)/len(tweets)))
+  print("Neutral tweets percentage from: " + text_input + " {} %  ".format(100*(len(tweets) -(len( ntweets )+len( ptweets)))/len(tweets)))
+
+  display(df)
+
 
 with st.form(key='vars'):
         text_input = st.text_input(label='Choose topic')
         number_input = st.number_input(label= 'How many tweets should we source?')
-        submit_button = st.form_submit_button(label='Submit')
-
-tweets = fetch_tweets(query = text_input, count = number_input)
-
-## sort and grab percentages between each type
-## of tweet with pandas..
-df = pd.DataFrame(tweets, columns= ['tweets', 'clean_tweets', 'sentiment'])
-
-
-### dropping duplicate tweets too..
-df = df.drop_duplicates(subset='clean_tweets')
-df.to_csv('tweetbank.csv', index= False)
-
-ptweets = df[df['sentiment'] == 'positive']
-print("Percentage of positive tweets from: " + Topic + " {} %".format(100*len(ptweets)/len(tweets)))
-  
-ntweets = df[df['sentiment'] == 'negative']
-print("Percentage of negative tweets from: " + Topic + " {} %".format(100*len(ntweets)/len(tweets)))
-print("Neutral tweets percentage from: " + Topic + " {} %  ".format(100*(len(tweets) -(len( ntweets )+len( ptweets)))/len(tweets)))
-
-display(df)
-
-
-
+        submit_button = st.form_submit_button(label='Run')
+        
+        if submit_button:
+            run()

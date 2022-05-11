@@ -97,7 +97,7 @@ def app():
 
   #@title Choose which madlib to play!
   # code to play
-  with st.form(key='vars'):
+with st.form(key='vars'):
         submit_button = st.form_submit_button(label='Run')
         madlib_choice = st.selectbox('Madlibs',('The lonely companion', 'Lost my business'))
 ## call madlib function

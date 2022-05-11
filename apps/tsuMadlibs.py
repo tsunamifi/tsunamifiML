@@ -10,12 +10,14 @@ Original file is located at
 
 # *RUN BEFORE PLAYING (NECESSARY)*
 """
-def app():
-    
   #importing things here
   import streamlit as st
   from IPython.display import HTML, display
   import textwrap
+
+def app():
+    
+
 
   #defining functions here
 

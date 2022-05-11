@@ -112,7 +112,7 @@ def app():
     WPA()
 
         
-  if submit_button:
+if submit_button:
     run()
-  else:
+else:
     pass

@@ -12,9 +12,6 @@ Original file is located at
 """
 
 #importing things here
-import os
-from google.colab import output
-from google.colab import widgets
 from IPython.display import HTML, display
 import textwrap
 

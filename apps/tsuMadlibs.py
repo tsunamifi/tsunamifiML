@@ -10,17 +10,18 @@ Original file is located at
 
 # *RUN BEFORE PLAYING (NECESSARY)*
 """
+def app():
+    
+  #importing things here
+  import streamlit as st
+  from IPython.display import HTML, display
+  import textwrap
 
-#importing things here
-import streamlit as st
-from IPython.display import HTML, display
-import textwrap
-
-#defining functions here
+  #defining functions here
 
 
-## creating user input for variables then placing the variables inside of the actual madlib story
-def madlib1():
+  ## creating user input for variables then placing the variables inside of the actual madlib story
+  def madlib1():
 
         noun = input(' enter a noun: ' )
         noun2 =  input(' enter another noun: ' ) 
@@ -53,7 +54,7 @@ def madlib1():
         print(textwrap.fill(stry, 80)) 
        
        
-def  madlib2():
+  def  madlib2():
 
         noun = input(' enter a noun: ' )
         cash1 =   input('enter number:  ' ) 
@@ -72,14 +73,14 @@ def  madlib2():
 
         print(textwrap.fill(stry, 80))
 
-def mlc():
+  def mlc():
     if madlib_choice == 'The lonely companion':
        madlib1()
     else:
        madlib2()
 
-## asks user if they would like to run the application over again
-def WPA(): #wanna play again?
+  ## asks user if they would like to run the application over again
+  def WPA(): #wanna play again?
       while True:
        Answer = input(' Would you like to play this Madlib again?: ')
        if Answer == 'yes' or Answer == 'Yes':
@@ -92,26 +93,26 @@ def WPA(): #wanna play again?
 
 """# *OK, we can play now!*"""
 
-#@title Choose which madlib to play!
-# code to play
-with st.form(key='vars'):
+  #@title Choose which madlib to play!
+  # code to play
+  with st.form(key='vars'):
         submit_button = st.form_submit_button(label='Run')
         madlib_choice = st.selectbox('Madlibs',('The lonely companion', 'Lost my business'))
 ## call madlib function
-def run():
-  if madlib_choice == 'The lonely companion':
-   madlib1()
-  else:
-   madlib2()
+  def run():
+    if madlib_choice == 'The lonely companion':
+     madlib1()
+    else:
+     madlib2()
 
   ## just a separator so its easier on your eyes
-  print('------------------------------------------------------------')
+    print('------------------------------------------------------------')
 
   ## call play again function
-  WPA()
+    WPA()
 
         
-if submit_button:
-  run()
-else:
+  if submit_button:
+    run()
+  else:
     pass

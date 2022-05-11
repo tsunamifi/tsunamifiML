@@ -12,6 +12,7 @@ Original file is located at
 """
 
 #importing things here
+import streamlit as st
 from IPython.display import HTML, display
 import textwrap
 

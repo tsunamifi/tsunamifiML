@@ -152,4 +152,6 @@ with st.form(key='vars'):
         submit_button = st.form_submit_button(label='Run')
         
 if submit_button:
-            run()
+   run()
+else:
+    pass

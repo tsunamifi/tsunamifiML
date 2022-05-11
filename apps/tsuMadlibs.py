@@ -114,4 +114,6 @@ def run():
 
         
 if submit_button:
-            run()
+  run()
+else:
+    pass

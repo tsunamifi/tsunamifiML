@@ -105,7 +105,7 @@ def run():
    madlib1()
   else:
    madlib2()
-  output.
+
   ## just a separator so its easier on your eyes
   print('------------------------------------------------------------')
 

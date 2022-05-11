@@ -1,6 +1,6 @@
 import streamlit as st
 from tsunamiml import MultiApp
-from apps import home, data, model # import your app modules here
+from apps import home, tsuMadlibs, tsuTEAv1 # import your app modules here
 
 app = MultiApp()
 

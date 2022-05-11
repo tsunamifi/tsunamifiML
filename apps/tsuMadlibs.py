@@ -10,10 +10,10 @@ Original file is located at
 
 # *RUN BEFORE PLAYING (NECESSARY)*
 """
-  #importing things here
-  import streamlit as st
-  from IPython.display import HTML, display
-  import textwrap
+#importing things here
+import streamlit as st
+from IPython.display import HTML, display
+import textwrap
 
 def app():
     

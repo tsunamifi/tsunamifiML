@@ -13,7 +13,7 @@ def run():
     )
 
     st.write("# Welcome to my portfolio!")
-    st.write("My name is Elton White and I am a 24 year old junior python & cyber security enthusiast)
+    st.write("My name is Elton White and I am a 24 year old junior python & cyber security enthusiast")
 
     st.markdown(
         """

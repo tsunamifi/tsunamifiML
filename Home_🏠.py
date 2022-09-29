@@ -21,7 +21,7 @@ def run():
         **👈 Select a project to interact with** 
         ### Contact me!
         - Check me out on [LinkedIn](https://www.linkedin.com/in/whitee)
-        - Check out this project and more on [Github] (https://github.com/tsunamifi/tsunamifiML)
+        - Check out this project and more on [Github](https://github.com/tsunamifi/tsunamifiML)
     """
     )
 
